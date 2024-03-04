@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-//@SessionScope
+@SessionScope
 @Service
 public class CartService {
-    private List<Item> itemsInCart = new ArrayList<>();
-    public void addToCart(int... indexes) {
+    private final List<Item> itemsInCart = new ArrayList<>();
+    public void addToCart(List<Integer> indexes) {
         for (int index : indexes) {
             try {
                 itemsInCart.add(Assortment.getItem(index));
@@ -25,6 +25,6 @@ public class CartService {
     }
 
     public List<Item> getItemsInCart() {
-        return itemsInCart;
+        return Collections.unmodifiableList(itemsInCart);
     }
 }

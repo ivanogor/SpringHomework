@@ -2,14 +2,13 @@ package com.skypro.cart.controller;
 
 import com.skypro.cart.model.Item;
 import com.skypro.cart.service.CartService;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/store/order")
 public class CartController {
     private final CartService cartService;
 
@@ -17,13 +16,14 @@ public class CartController {
         this.cartService = cartService;
     }
 
-    @RequestMapping("/add")
-    public void add(@RequestParam(value = "index", required = false) int... indexes) {
+    @GetMapping("/add")
+    public void add(@RequestParam(value = "index") List<Integer> indexes) {
         cartService.addToCart(indexes);
     }
 
-    @RequestMapping("/get")
+    @GetMapping("/get")
     public List<Item> get() {
         return cartService.getItemsInCart();
     }
+
 }
