@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public class Assortment {
-    private final static List<Item> items = new ArrayList<>(List.of(
+    private final List<Item> items = new ArrayList<>(List.of(
             new Item("Колбаса", 320),
             new Item("Хлеб", 52),
             new Item("Сыр", 220),
