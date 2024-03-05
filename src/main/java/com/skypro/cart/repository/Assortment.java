@@ -1,5 +1,6 @@
-package com.skypro.cart.model;
+package com.skypro.cart.repository;
 
+import com.skypro.cart.model.Item;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public class Assortment {
             new Item("Молоко", 74))
     );
 
-    public static Item getItem(int index) {
+    public Item getItem(int index) {
         return items.get(index);
     }
 }
