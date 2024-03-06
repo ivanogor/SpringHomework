@@ -21,7 +21,7 @@ public class CartService {
     public void addToCart(List<Integer> indexes) {
         for (int index : indexes) {
             try {
-                cart.getItems().add(assortment.getItem(index));
+                cart.addItems(assortment.getItem(index));
             }
             catch (IndexOutOfBoundsException e) {
                 System.out.println(index + " - данный индекс не подходит.");

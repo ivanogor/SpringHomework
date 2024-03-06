@@ -12,6 +12,10 @@ import java.util.List;
 public class Cart {
     private final List<Item> items = new ArrayList<>();
 
+    public void addItems(Item item) {
+        items.add(item);
+    }
+
     public List<Item> getItems() {
         return items;
     }

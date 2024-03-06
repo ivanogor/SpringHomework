@@ -10,7 +10,7 @@ import java.util.List;
 
 @Repository
 public class Assortment {
-    private final List<Item> items = new ArrayList<>(List.of(
+    private final List<Item> itemsInAssortment = new ArrayList<>(List.of(
             new Item("Колбаса", 320),
             new Item("Хлеб", 52),
             new Item("Сыр", 220),
@@ -19,6 +19,6 @@ public class Assortment {
     );
 
     public Item getItem(int index) {
-        return items.get(index);
+        return itemsInAssortment.get(index);
     }
 }
